@@ -85,5 +85,7 @@ class CloudflareController extends Controller
         }
         return $results;
 
-    }
+
+
+   }
 }
