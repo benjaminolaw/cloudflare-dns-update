@@ -60,19 +60,7 @@ class CloudflareController extends Controller
         return Http::withHeaders($this->headers())->patch("https://api.cloudflare.com/client/v4/zones/{$zoneId}/dns_records/{$record['id']}", $data)->json();
     }
 
-    public function viewTest(){
-        $zone = $this->getZones();
 
-       $zoneId = $zone[0]['id'];
-    $records = $this->getARecords($zoneId);
-
-
-    $ftp = $records[1];
-
-    return $this->updateARecords($zoneId, $ftp, "176.9.30.199");
-
-
-    }
 
     public function updateAllARecords($newIp){
         $zones = $this->getZones();
