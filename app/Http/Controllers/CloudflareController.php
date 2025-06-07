@@ -57,7 +57,7 @@ class CloudflareController extends Controller
             'proxied' => $record['proxied'],
         ];
 
-        return Http::withHeaders($this->headers())->patch("https://api.cloudflare.com/client/v4/zones/{$zoneId}/dns_records/{$record['id']}", $data)->json();
+        return Http::withHeaders($this->headers())->patch("{$this->apiUrl}/zones/{$zoneId}/dns_records/{$record['id']}", $data)->json();
     }
 
 
@@ -85,9 +85,5 @@ class CloudflareController extends Controller
         }
         return $results;
 
-    }
-
-    public function test(){
-        return $this->updateAllARecords("176.9.30.199");
     }
 }
