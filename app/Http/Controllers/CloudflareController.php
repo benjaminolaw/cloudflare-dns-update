@@ -87,7 +87,4 @@ class CloudflareController extends Controller
 
     }
 
-    public function test(){
-        return $this->updateAllARecords("176.9.30.199");
-    }
 }
